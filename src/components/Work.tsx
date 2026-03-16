@@ -146,6 +146,15 @@ export const Component = () => {
         </Canvas>
       </div>
 
+      {/* ── FIXED: AF image only ── */}
+      <div className="fixed top-6 left-6 sm:top-8 sm:left-8 md:left-14 lg:left-20 z-50 pointer-events-none">
+        <img
+          src="/AF.png"
+          alt="AgentForge Logo"
+          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+        />
+      </div>
+
       {/* MENU */}
       <div className="fixed top-6 right-6 sm:top-8 sm:right-8 md:right-14 lg:right-20 z-50 pointer-events-auto max-md:scale-[0.9] max-md:origin-top-right">
         <MenuBar
@@ -172,12 +181,11 @@ export const Component = () => {
 
       <div className="relative z-10 w-full px-6 sm:px-8 md:px-14 lg:px-20">
 
-        {/* HERO */}
+        {/* HERO — unchanged, AF img here is now visually overlapped by the fixed one */}
         <div ref={heroRef} className="min-h-screen flex flex-col justify-between pt-6 pb-12 sm:pt-8 sm:pb-16">
           <div className="flex items-center gap-3 sm:gap-4">
-            <div className="relative shrink-0">
-              <img src="/AF.png" alt="AgentForge Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
-            </div>
+            {/* Same-size invisible spacer so layout stays pixel-perfect */}
+            <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
             <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
             <div className="flex flex-col gap-[4px]">
               <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">AGENTFORGE</span>

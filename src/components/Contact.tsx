@@ -225,6 +225,15 @@ export const Component = () => {
 
       <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
 
+      {/* ── FIXED: AF image only ── */}
+      <div className="fixed top-6 left-6 sm:top-8 sm:left-8 md:left-14 lg:left-20 z-50 pointer-events-none">
+        <img
+          src="/AF.png"
+          alt="AgentForge Logo"
+          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+        />
+      </div>
+
       {/* MENU */}
       <div className="fixed top-6 right-6 sm:top-8 sm:right-8 md:right-14 lg:right-20 z-50 pointer-events-auto max-md:scale-[0.9] max-md:origin-top-right">
         <MenuBar
@@ -252,11 +261,10 @@ export const Component = () => {
       {/* MAIN */}
       <div ref={heroRef} className="relative z-10 w-full flex-1 flex flex-col px-6 sm:px-8 md:px-14 lg:px-20 pt-6 sm:pt-8">
 
-        {/* Logo */}
+        {/* Logo — AF replaced with same-size spacer, rest scrolls normally */}
         <div className="flex items-center gap-3 sm:gap-4">
-          <div className="relative shrink-0">
-            <img src="/AF.png" alt="AgentForge Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
-          </div>
+          {/* Invisible spacer — exact same size as fixed AF image */}
+          <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
           <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
           <div className="flex flex-col gap-[4px]">
             <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">AGENTFORGE</span>
@@ -270,9 +278,9 @@ export const Component = () => {
           </div>
         </div>
         <div className="flex items-center gap-4 mb-8 sm:mb-10">
-              <span className="font-mono text-[9px] text-white/25 tracking-[0.3em] uppercase">000 // CONTACT</span>
-              <div className="h-px flex-1 max-w-[80px] bg-white/10" />
-            </div>
+          <span className="font-mono text-[9px] text-white/25 tracking-[0.3em] uppercase">000 // CONTACT</span>
+          <div className="h-px flex-1 max-w-[80px] bg-white/10" />
+        </div>
 
         {/* Form area */}
         <div className="flex-1 flex flex-col justify-center max-w-3xl w-full mx-auto py-16 sm:py-20">

@@ -167,7 +167,7 @@ export const Component = () => {
           </div>
           <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
           <div className="flex flex-col gap-[4px]">
-            <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">
+            <span className="font-mono text-[10px]  sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">
               AGENTFORGE
             </span>
             <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase leading-none flex items-center gap-1.5">
