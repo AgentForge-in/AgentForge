@@ -271,7 +271,7 @@ export const Component = () => {
   <div className="flex flex-col gap-[4px]">
             <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">AGENTFORGE</span>
             <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase leading-none flex items-center gap-1.5">
-              <span className="relative inline-flex w-[5px] h-[5px] shrink-0">
+              <span className="relative inline-flex w-1.25 h-1.25 shrink-0">
                 <span className="absolute inset-0 bg-white/50 rounded-full animate-ping opacity-40" />
                 <span className="relative bg-white/60 rounded-full w-[5px] h-[5px]" />
               </span>
@@ -334,7 +334,7 @@ export const Component = () => {
                           className={`font-mono text-[10px] tracking-[0.18em] uppercase px-5 py-4 border text-left transition-all duration-200 ${
                             values[step.key] === opt
                               ? "border-white/50 text-white bg-white/[0.06]"
-                              : "border-white/[0.08] text-white/35 hover:border-white/25 hover:text-white/70"
+                              : "border-white/8 text-white/35 hover:border-white/25 hover:text-white/70"
                           }`}
                         >{opt}</button>
                       ))}
@@ -345,7 +345,7 @@ export const Component = () => {
                       rows={5} value={values[step.key]} placeholder={step.placeholder}
                       onKeyDown={handleKeyDown}
                       onChange={(e) => { setValues((v) => ({ ...v, [step.key]: e.target.value })); setError(null); }}
-                      className="w-full bg-transparent border-b border-white/[0.12] focus:border-white/40 outline-none font-mono text-sm sm:text-base text-white placeholder:text-white/15 tracking-[0.05em] resize-none py-3 transition-colors duration-300 leading-relaxed"
+                      className="w-full bg-transparent border-b border-white/12 focus:border-white/40 outline-none font-mono text-sm sm:text-base text-white placeholder:text-white/15 tracking-[0.05em] resize-none py-3 transition-colors duration-300 leading-relaxed"
                     />
                   ) : (
                     <input

@@ -25,7 +25,7 @@ const COMPANY_LINKS = [
 // ✅ ONLY CHANGE: Added real links (replace with yours)
 const SOCIAL_LINKS = [
   { label: 'Instagram', href: 'https://www.instagram.com/agent_forgeai?utm_source=qr&igsh=MXgyM3gyb2E5cW9wcg%3D%3D', Icon: Instagram },
-  { label: 'LinkedIn',  href: 'https://x.com/ai_agentforge', Icon: Linkedin },
+  { label: 'LinkedIn',  href: 'https://linkedin.com/in/YOUR_USERNAME', Icon: Linkedin },
   { label: 'X',         href: 'https://x.com/ai_agentforge', Icon: X }, // 
   { label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61579445401285', Icon: Facebook },
 ];

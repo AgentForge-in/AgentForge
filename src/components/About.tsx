@@ -233,9 +233,9 @@ export const Component = () => {
             <div className="md:w-48 lg:w-56 shrink-0">
               <span className="font-mono text-[9px] text-white/25 tracking-[0.3em] uppercase">002 // PRINCIPLES</span>
             </div>
-            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-px  border border-white/6">
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06]">
               {PILLARS.map((p) => (
-                <div key={p.id} className="pillar-card bg-[#020202] p-6 sm:p-7 md:p-8 flex flex-col gap-5 group hover:bg-white/3 transition-colors duration-500">
+                <div key={p.id} className="pillar-card bg-[#020202] p-6 sm:p-7 md:p-8 flex flex-col gap-5 group hover:bg-white/[0.03] transition-colors duration-500">
                   <div className="flex items-start justify-between">
                     <span className="font-mono text-[9px] text-white/20 tracking-[0.3em] uppercase">{p.id}</span>
                     <ArrowUpRight size={12} className="text-white/10 group-hover:text-white/40 transition-colors duration-500" />
@@ -293,7 +293,7 @@ export const Component = () => {
                   <span className="font-mono text-[9px] text-white/20 tracking-widest shrink-0 pt-1">{step.n}</span>
                   <div className="flex flex-col gap-2">
                     <h4 className="font-mono text-sm sm:text-base font-black text-white tracking-[0.15em] uppercase">{step.title}</h4>
-                    <p className="font-mono text-[11px] text-white/35 tracking-widest uppercase leading-relaxed">{step.desc}</p>
+                    <p className="font-mono text-[11px] text-white/35 tracking-[0.1em] uppercase leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -302,7 +302,7 @@ export const Component = () => {
         </div>
 
         {/* CTA */}
-        <div className="reveal-row border-t border-white/6 py-20 sm:py-28 md:py-36 flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
+        <div className="reveal-row border-t border-white/[0.06] py-20 sm:py-28 md:py-36 flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
           <div>
             <span className="font-mono text-[9px] text-white/25 tracking-[0.3em] uppercase block mb-6">005 // NEXT</span>
             <h2 className="text-[clamp(2.2rem,7vw,7.5rem)] font-black leading-[0.88] tracking-tighter text-white uppercase">

@@ -210,7 +210,7 @@ export const Component = () => {
             } else if (label === "Messages") {
               setMessageDialogOpen(true);
             } else if (label === "Mail") {
-              const recipients = "agentforge.studio@gmail.com,rahulvish194002@gmail.com,virajwalavalkar90982@gmail.com";
+              const recipients = "agentforgestudio@gmail.com,rahulvish194002@gmail.com,virajwalavalkar90982@gmail.com";
               const subject = encodeURIComponent("About Ai Automation");
               const body = encodeURIComponent(
                 "Hello,\n\nI am reaching out to inquire about your AI automation services. I am interested in learning more about how your agency can help streamline and automate our business operations.\n\nI would appreciate the opportunity to discuss potential solutions tailored to our needs.\n\nLooking forward to your response.\n\nBest regards"

@@ -63,7 +63,7 @@ export default function App() {
                     <div className="px-4 pb-6 sm:px-6 lg:px-8">
                       <Footer />
                     </div>
-                    <div className="fixed inset-0 pointer-events-none bento-mask opacity-10 z-[100]" />
+                    <div className="fixed inset-0 pointer-events-none bento-mask opacity-10 z-100" />
                   </>
                 }
               />

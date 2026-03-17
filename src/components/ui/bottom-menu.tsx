@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, AnimatePresence, easeInOut } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ interface MenuBarProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const springConfig = {
   duration: 0.3,
-  ease: easeInOut,
+  ease: "easeInOut",
 };
 
 const NAV_ROUTES: Record<string, string> = {
