@@ -16,8 +16,8 @@ interface MenuBarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const springConfig = {
-  duration: 0.3,
-  ease: "easeInOut",
+  duration: 0.5,
+  ease: "easeInOut" as const
 };
 
 const NAV_ROUTES: Record<string, string> = {
