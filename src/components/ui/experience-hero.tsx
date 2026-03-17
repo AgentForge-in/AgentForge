@@ -137,16 +137,17 @@ export const Component = () => {
     }, containerRef);
     return () => ctx.revert();
   }, []);
+
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <section
       ref={containerRef}
       className="relative min-h-screen w-full bg-[#020202] flex flex-col selection:bg-white selection:text-black overflow-hidden"
     >
-      {/* ── Canvas BG ── */}
+      {/* ── Canvas BG — all screen sizes ── */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 60], fov: 35 }}>
           <ambientLight intensity={0.4} />
@@ -156,11 +157,13 @@ export const Component = () => {
         </Canvas>
       </div>
 
-      {/* ── FIXED TOP-LEFT: logo + 000 // HOME together ── */}
+      {/* ── FIXED TOP-LEFT: logo (always) + text + label (desktop only) ── */}
       <div className="fixed top-6 left-6 sm:top-8 sm:left-8 md:left-14 lg:left-20 z-50 pointer-events-auto flex flex-col gap-2">
 
         {/* Logo lockup */}
         <div className="flex items-center gap-3 sm:gap-4">
+
+          {/* AF logo — always visible */}
           <div className="relative shrink-0">
             <img
               src="/AF.png"
@@ -168,23 +171,28 @@ export const Component = () => {
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
             />
           </div>
-          <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
-          <div className="flex flex-col gap-[4px]">
-            <span className="font-mono text-[10px]  sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">
-              AGENTFORGE
-            </span>
-            <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase leading-none flex items-center gap-1.5">
-              <span className="relative inline-flex w-[5px] h-[5px] shrink-0">
-                <span className="absolute inset-0 bg-white/50 rounded-full animate-ping opacity-40" />
-                <span className="relative bg-white/60 rounded-full w-[5px] h-[5px]" />
+
+          {/* Divider + AGENTFORGE text — desktop only */}
+          <div className="hidden md:flex items-center gap-3 sm:gap-4">
+            <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
+            <div className="flex flex-col gap-[4px]">
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">
+                AGENTFORGE
               </span>
-              Agentic Studio
-            </span>
+              <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase leading-none flex items-center gap-1.5">
+                <span className="relative inline-flex w-[5px] h-[5px] shrink-0">
+                  <span className="absolute inset-0 bg-white/50 rounded-full animate-ping opacity-40" />
+                  <span className="relative bg-white/60 rounded-full w-[5px] h-[5px]" />
+                </span>
+                Agentic Studio
+              </span>
+            </div>
           </div>
+
         </div>
 
-        {/* 000 // HOME — directly below logo, tight gap-2 */}
-        <div className="flex items-center gap-3">
+        {/* 000 // HOME — desktop only */}
+        <div className="hidden md:flex items-center gap-3">
           <span className="font-mono text-[9px] text-white/25 tracking-[0.3em] uppercase">
             000 // HOME
           </span>
@@ -193,7 +201,7 @@ export const Component = () => {
 
       </div>
 
-      {/* ── FIXED MENU BAR — top right ── */}
+      {/* ── FIXED MENU BAR — always visible ── */}
       <div className="fixed top-6 right-6 sm:top-8 sm:right-8 md:right-14 lg:right-20 z-50 pointer-events-auto max-md:scale-[0.9] max-md:origin-top-right">
         <MenuBar
           items={[
@@ -229,7 +237,6 @@ export const Component = () => {
         {/* LEFT COLUMN */}
         <div className="flex-1 min-w-0 flex flex-col justify-between w-full min-h-0">
 
-          {/* Spacer so justify-between works cleanly without a label here */}
           <div />
 
           {/* HEADING */}
