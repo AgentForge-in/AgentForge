@@ -102,7 +102,7 @@ export function ChatbotWidget() {
 
   const listRef = useRef<HTMLDivElement | null>(null);
 
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY as string | undefined;
+  const apiKey = import.meta.env.OPENAI_API_KEY as string | undefined;
   const formEndpoint = import.meta.env.VITE_FORM_ENDPOINT as string | undefined;
 
   const starterHints = useMemo(() => QUICK_QUESTIONS, []);
@@ -178,7 +178,7 @@ export function ChatbotWidget() {
 
   const getOpenAIReply = async (text: string) => {
     if (!apiKey) {
-      return "Please add `VITE_OPENAI_API_KEY=your_key` in `.env` and restart the dev server to enable AI replies.";
+      return "Please add `OPENAI_API_KEY=your_key` in `.env` and restart the dev server to enable AI replies.";
     }
 
     const history = messages
