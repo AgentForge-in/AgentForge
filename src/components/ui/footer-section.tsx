@@ -1,7 +1,7 @@
 ﻿'use client';
 
 import { Link } from 'react-router-dom';
-import { motion, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion } from 'framer-motion';
 import type { ComponentProps, ReactNode } from 'react';
 import { Instagram, Linkedin, Facebook, X } from 'lucide-react';
 

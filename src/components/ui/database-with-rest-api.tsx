@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+// import React from "react";
 import { motion } from "framer-motion";
 import { Folder, HeartHandshake, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
