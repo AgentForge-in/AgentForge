@@ -114,12 +114,40 @@ export function StartProjectPage() {
           <ArrowLeft className="size-3.5" />
           Back
         </Link>
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 rounded-full bg-white/30" />
-          <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">
-            RAHUL.V
-          </span>
-        </div>
+        <div className="flex items-center gap-3 sm:gap-4">
+  
+  {/* Logo */}
+  <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 shrink-0">
+    <img
+      src="/AF.png"
+      alt="AF Logo"
+      className="max-h-full w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+    />
+  </div>
+
+  {/* Divider */}
+  <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
+
+  {/* Text */}
+  <div className="flex flex-col justify-center gap-[4px] leading-none">
+    
+    <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase">
+      AGENTFORGE
+    </span>
+
+    <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase flex items-center gap-1.5">
+      
+      {/* Animated Dot */}
+      <span className="relative inline-flex w-[5px] h-[5px] shrink-0">
+        <span className="absolute inset-0 bg-white/50 rounded-full animate-ping opacity-40" />
+        <span className="relative bg-white/60 rounded-full w-[5px] h-[5px]" />
+      </span>
+
+      Agentic Studio
+    </span>
+
+  </div>
+</div>
       </header>
 
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-24 sm:py-32">

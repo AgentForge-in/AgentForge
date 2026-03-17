@@ -115,6 +115,9 @@ export const Component = () => {
     }, containerRef);
     return () => ctx.revert();
   }, []);
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
 
   return (
     <section
@@ -165,11 +168,10 @@ export const Component = () => {
 
         {/* HERO */}
         <div ref={heroRef} className="min-h-screen flex flex-col justify-between pt-6 pb-12 sm:pt-8 sm:pb-16">
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Invisible spacer — same size as fixed AF image so layout stays identical */}
-            <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
-            <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
-            <div className="flex flex-col gap-[4px]">
+        <div className="hidden sm:flex items-center gap-3 sm:gap-4">
+  <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
+  <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
+  <div className="flex flex-col gap-[4px]">
               <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">AGENTFORGE</span>
               <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase leading-none flex items-center gap-1.5">
                 <span className="relative inline-flex w-[5px] h-[5px] shrink-0">

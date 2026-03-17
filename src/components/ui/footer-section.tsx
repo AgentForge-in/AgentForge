@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'motion/react';
 import type { ComponentProps, ReactNode } from 'react';
-import { Instagram, Linkedin, Youtube, Facebook } from 'lucide-react';
+import { Instagram, Linkedin, Facebook, X } from 'lucide-react';
 
 /* ─────────────────────────────────────────────
    Data — update links as pages are built
@@ -22,11 +22,12 @@ const COMPANY_LINKS = [
   { label: 'Terms',          href: '/terms' },
 ];
 
+// ✅ ONLY CHANGE: Added real links (replace with yours)
 const SOCIAL_LINKS = [
-  { label: 'Instagram', href: '#', Icon: Instagram },
-  { label: 'LinkedIn',  href: '#', Icon: Linkedin },
-  { label: 'YouTube',   href: '#', Icon: Youtube },
-  { label: 'Facebook',  href: '#', Icon: Facebook },
+  { label: 'Instagram', href: 'https://www.instagram.com/agent_forgeai?utm_source=qr&igsh=MXgyM3gyb2E5cW9wcg%3D%3D', Icon: Instagram },
+  { label: 'LinkedIn',  href: 'https://linkedin.com/in/YOUR_USERNAME', Icon: Linkedin },
+  { label: 'X',         href: 'https://x.com/YOUR_USERNAME', Icon: X }, // ✅ changed
+  { label: 'Facebook',  href: 'https://www.facebook.com/profile.php?id=61579445401285', Icon: Facebook },
 ];
 
 /* ─────────────────────────────────────────────
@@ -67,7 +68,6 @@ export function Footer() {
 
           {/* Left — logo + tagline */}
           <Reveal delay={0.05} className="md:w-64 lg:w-72 shrink-0 flex flex-col gap-6">
-            {/* Logo lockup */}
             <div className="flex items-center gap-3">
               <div className="shrink-0">
                 <img
@@ -91,12 +91,10 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Tagline */}
             <p className="font-mono text-[10px] sm:text-[11px] text-white/25 tracking-[0.18em] uppercase leading-relaxed max-w-[220px]">
               Your Business,<br />Amplified by Intelligence.
             </p>
 
-            {/* Location + status */}
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[8px] text-white/15 tracking-[0.25em] uppercase">
                 MUMBAI, INDIA
@@ -157,6 +155,14 @@ export function Footer() {
               <ul className="flex flex-col gap-3">
                 <li>
                   <a
+                    href="mailto:agentforge.studio@gmail.com"
+                    className="font-mono text-[10px] text-white/35 tracking-[0.1em] uppercase hover:text-white/80 transition-colors duration-300 break-all"
+                  >
+                    agentforge.studio@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="mailto:rahulvish194002@gmail.com"
                     className="font-mono text-[10px] text-white/35 tracking-[0.1em] uppercase hover:text-white/80 transition-colors duration-300 break-all"
                   >
@@ -179,6 +185,8 @@ export function Footer() {
                   <a
                     key={label}
                     href={href}
+                    target="_blank" // ✅ added
+                    rel="noopener noreferrer" // ✅ added
                     aria-label={label}
                     className="w-7 h-7 border border-white/[0.08] flex items-center justify-center hover:border-white/30 hover:bg-white/[0.05] transition-all duration-300"
                   >

@@ -128,6 +128,10 @@ export const Component = () => {
   }, []);
 
   useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
+
+  useEffect(() => {
     gsap.fromTo(".project-card",
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, stagger: 0.07, duration: 0.7, ease: "power3.out" }
@@ -183,11 +187,10 @@ export const Component = () => {
 
         {/* HERO — unchanged, AF img here is now visually overlapped by the fixed one */}
         <div ref={heroRef} className="min-h-screen flex flex-col justify-between pt-6 pb-12 sm:pt-8 sm:pb-16">
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Same-size invisible spacer so layout stays pixel-perfect */}
-            <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
-            <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
-            <div className="flex flex-col gap-[4px]">
+          <div className="hidden sm:flex items-center gap-3 sm:gap-4">
+  <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
+  <div className="w-px h-7 sm:h-8 bg-white/15 shrink-0" />
+  <div className="flex flex-col gap-[4px]">
               <span className="font-mono text-[10px] sm:text-[11px] font-bold text-white tracking-[0.25em] uppercase leading-none">AGENTFORGE</span>
               <span className="font-mono text-[8px] sm:text-[9px] text-white/30 tracking-[0.18em] uppercase leading-none flex items-center gap-1.5">
                 <span className="relative inline-flex w-[5px] h-[5px] shrink-0">
