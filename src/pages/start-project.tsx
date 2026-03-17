@@ -19,7 +19,7 @@ const BUSINESS_CATEGORIES = [
 const FORM_ENDPOINT =
   import.meta.env.VITE_FORM_ENDPOINT || "https://formspree.io/f/xxxxxxxx";
 
-export function StartProjectPage() {
+export default function StartProjectPage() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});

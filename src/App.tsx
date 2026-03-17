@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Component } from "./components/ui/experience-hero";
 import { TimelineSection } from "./components/ui/timeline-section";
@@ -9,15 +9,17 @@ import { VectorPadSection } from "./components/ui/vector-pad-section";
 import { FAQSection } from "./components/ui/faq-section";
 import { Footer } from "./components/ui/footer-section";
 import { ChatbotWidget } from "./components/ui/chatbot-widget";
-import { StartProjectPage } from "./pages/start-project";
-import { Component as AboutPage } from "./components/About";
-import { Component as WorkPage } from "./components/Work";
-import { Component as ContactPage } from "./components/Contact";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// ✅ Lazy loaded pages (ONLY CHANGE)
+const StartProjectPage = lazy(() => import("./pages/start-project"));
+const AboutPage = lazy(() => import("./components/About").then(m => ({ default: m.Component })));
+const WorkPage = lazy(() => import("./components/Work").then(m => ({ default: m.Component })));
+const ContactPage = lazy(() => import("./components/Contact").then(m => ({ default: m.Component })));
 
 export default function App() {
   useEffect(() => {
@@ -43,39 +45,43 @@ export default function App() {
     <div className="dark min-h-screen bg-[#020202] selection:bg-white selection:text-black">
       <BrowserRouter>
         <main className="relative w-full overflow-x-hidden">
-          <Routes>
 
-            {/* ── Home ── */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <Component />
-                  <TimelineSection />
-                  <FeaturesSection />
-                  <VectorPadSection />
-                  <FAQSection />
-                  <div className="px-4 pb-6 sm:px-6 lg:px-8">
-                    <Footer />
-                  </div>
-                  <div className="fixed inset-0 pointer-events-none bento-mask opacity-10 z-[100]" />
-                </>
-              }
-            />
+          {/* ✅ Suspense wrapper added */}
+          <Suspense fallback={<div className="text-white p-5">Loading...</div>}>
+            <Routes>
 
-            {/* ── About ── */}
-            <Route path="/about" element={<AboutPage />} />
+              {/* ── Home ── */}
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Component />
+                    <TimelineSection />
+                    <FeaturesSection />
+                    <VectorPadSection />
+                    <FAQSection />
+                    <div className="px-4 pb-6 sm:px-6 lg:px-8">
+                      <Footer />
+                    </div>
+                    <div className="fixed inset-0 pointer-events-none bento-mask opacity-10 z-[100]" />
+                  </>
+                }
+              />
 
-            {/* ── Work ── */}
-            <Route path="/work" element={<WorkPage />} />
+              {/* ── About ── */}
+              <Route path="/about" element={<AboutPage />} />
 
-            {/* ── Contact ── */}
-            <Route path="/contact" element={<ContactPage />} />
+              {/* ── Work ── */}
+              <Route path="/work" element={<WorkPage />} />
 
-            {/* ── Start Project ── */}
-            <Route path="/start-project" element={<StartProjectPage />} />
+              {/* ── Contact ── */}
+              <Route path="/contact" element={<ContactPage />} />
 
-          </Routes>
+              {/* ── Start Project ── */}
+              <Route path="/start-project" element={<StartProjectPage />} />
+
+            </Routes>
+          </Suspense>
 
           {/* ChatbotWidget floats on top of every page */}
           <ChatbotWidget />
