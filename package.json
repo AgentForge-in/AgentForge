@@ -3,12 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "start": "vite",
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-},
+
+  "engines": {
+    "node": "20.x"
+  },
+
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite preview"
+  },
+
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
     "@react-three/drei": "^9.114.3",
@@ -20,13 +26,13 @@
     "gsap": "^3.12.5",
     "lenis": "^1.1.17",
     "lucide-react": "^0.577.0",
-    "motion": "^12.36.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.13.1",
     "tailwind-merge": "^3.5.0",
     "three": "^0.169.0"
   },
+
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^18.3.12",
